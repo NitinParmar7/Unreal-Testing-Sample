@@ -6,6 +6,10 @@ public class UnrealTestingSample : ModuleRules
     {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         PublicIncludePaths.Add(ModuleDirectory);
-        PublicDependencyModuleNames.AddRange(new[] { "Core", "CoreUObject", "Engine" });
+        PublicDependencyModuleNames.AddRange(new[]
+        {
+            "Core", "CoreUObject", "Engine",
+            "GameplayAbilities", "GameplayTags", "GameplayTasks"
+        });
     }
 }

@@ -1,8 +1,8 @@
 #include "Misc/AutomationTest.h"
 #include "Async/Async.h"
-#include "Containers/Ticker.h"
 #include "GameFramework/Actor.h"
 #include "HealthComponent.h"
+#include "TestTime.h"
 #include "TestWorld.h"
 
 #if WITH_DEV_AUTOMATION_TESTS
@@ -21,30 +21,6 @@ namespace
         OutActor->FinishSpawning(FTransform::Identity);
         OutActor->DispatchBeginPlay();
         return Health;
-    }
-
-    void AdvanceWorldFor(FTestWorld* TestWorld, float Duration, float FrameDelta, TFunction<void()> OnComplete)
-    {
-        const int32 FrameCount = FMath::CeilToInt(Duration / FrameDelta);
-        FTSTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateLambda(
-            [TestWorld, FramesRemaining = FrameCount, FrameDelta, bPrimed = false, OnComplete = MoveTemp(OnComplete)](float) mutable
-            {
-                if (!bPrimed)
-                {
-                    TestWorld->Tick(0.f);
-                    bPrimed = true;
-                    return true;
-                }
-
-                TestWorld->Tick(FrameDelta);
-                if (--FramesRemaining == 0)
-                {
-                    OnComplete();
-                    return false;
-                }
-
-                return true;
-            }));
     }
 }
 

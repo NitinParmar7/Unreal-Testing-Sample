@@ -11,8 +11,14 @@
 		},
 		{
 			"Name": "UnrealTestingSampleTests",
-            "Type": "DeveloperTool",
+			"Type": "DeveloperTool",
 			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
 		}
 	]
 }
