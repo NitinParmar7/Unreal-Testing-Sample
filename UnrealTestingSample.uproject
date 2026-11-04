@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.8",
+	"Category": "",
+	"Description": "Sample project for the 'Unit Testing in Unreal Engine' blog post",
+	"Modules": [
+		{
+			"Name": "UnrealTestingSample",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "UnrealTestingSampleTests",
+            "Type": "DeveloperTool",
+			"LoadingPhase": "Default"
+		}
+	]
+}
