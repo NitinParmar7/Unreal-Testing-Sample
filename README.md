@@ -10,7 +10,7 @@ Companion project for the blog post *Unit Testing in Unreal Engine*. It is a min
 | `Source/UnrealTestingSampleTests/DamageCalculatorTest.cpp` | `IMPLEMENT_SIMPLE_AUTOMATION_TEST` |
 | `Source/UnrealTestingSampleTests/HealthComponentSpec.cpp` | Automation Spec: damage, timers, latent test |
 
-Targets Unreal Engine 5.8. For another 5.x version, update `EngineAssociation` in the `.uproject`, and use supported `DefaultBuildSettings` and `IncludeOrderVersion` values in both `*.Target.cs` files.
+Targets Unreal Engine 5.8. Both `*.Target.cs` files use `DefaultBuildSettings = BuildSettingsVersion.V7` and `IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_8`. For another 5.x version, update `EngineAssociation` in the `.uproject` and use the supported settings for that engine version.
 
 ## Build
 
@@ -30,4 +30,4 @@ UnrealEditor-Cmd UnrealTestingSample.uproject \
   -ReportExportPath="Saved/AutomationReports" -log
 ```
 
-Expected: 13 passing tests (1 simple, 12 spec cases).
+Expected: 14 passing tests (1 simple, 13 spec cases).

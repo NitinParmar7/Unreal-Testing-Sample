@@ -3,6 +3,8 @@ Intermediate/
 Saved/
 DerivedDataCache/
 .vs/
+.idea/
 *.sln
+*.slnx
 *.suo
 *.VC.db
